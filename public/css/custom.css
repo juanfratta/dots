@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: monospace;
+    color: white;
 }
 
 .title-box {
@@ -60,12 +62,31 @@
     align-items: center;
     width: 30%;
     background:yellowgreen;
+    padding: 0.8em;
 }
 
 span {
     text-align: center;    
-    font-family: monospace;
     font-size: 1.2em;
     width: 60%;
     color: white;
+}
+
+.circle {
+  fill:#ff000087;
+}
+
+.a-ubication {
+    text-align: center;
+    width: 100%;
+}
+
+.o-ubication {
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+}
+
+p {
+    font-size: 1.2em;
 }

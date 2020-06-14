@@ -9,23 +9,18 @@
 
 <body>
 <div calss="app">
-    <div class="table">
-        <?php
-        $text="#";
-        $x=200;
-        $y=200;
-        $circle = ps_show_xy( $psdoc , $text , $x , $y );
 
-        ?>
-        
-        <div>{$circle}</div>
-        <!--aca deberían dibujarse los dots aleatorios-->
-        
-     
+<!--aca se dibujan los dots-->
 
-        
-       
+    <div class="table">      
+        <svg height="100%" width="100%">
+            <ellipse cx="200" cy="80" rx="20" ry="20" class="circle"/>
+            <ellipse cx="180" cy="80" rx="20" ry="20" class="circle"/>
+        </svg>       
     </div>
+
+<!--Aca empieza el dashboard-->     
+   
     <div class="dashboard">    
         <h2 class="title"> Dots exercise</h2>
         <div class="">
@@ -41,12 +36,21 @@
                         <select name="" id="">
                             <option value="value1">Value 1</option>                        
                         </select>
-                    </span>
-                    <button class="btn-control">Obtener Ubicación</button>
-                    <label for=""> Ubicacion:
-                    <span class="ubication">knodowdbvowdbv</span>
-                    </label>                
-                    <button class="btn-control">Actualizar Ubicación</button>
+                    </span> 
+                    <div class="o-ubication"> 
+                        <button class="btn-control">Obtener Ubicación</button>
+                        <span class="ubication">knodowdbvowdbv</span>                        
+                    </div>                   
+                    <div class="a-ubication">
+                        <div>
+                            <p>Ingresar coordenadas para actualizar</p>
+                            <label for="axis x">Eje X:</label>
+                            <input type="text" style="width:50px";>
+                            <label for="axis y">Eje Y:</label>
+                            <input type="text" style="width:50px";> 
+                        </div>        
+                        <button class="btn-control">Actualizar Ubicación</button>
+                    </div>
                 </div>
                 
                 <div class="col">
