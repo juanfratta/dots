@@ -1,16 +1,17 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Dot;
 
-class DatabaseSeeder extends Seeder
+class DotsTableSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call(DotsTableSeeder::class);
+      factory(Dot::class, 15)->create();
     }
 }

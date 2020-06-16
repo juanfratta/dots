@@ -16,6 +16,9 @@ class CreateDotsTable extends Migration
         Schema::create('dots', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('axis_x');
+            $table->integer('axis_y');
+        
         });
     }
 

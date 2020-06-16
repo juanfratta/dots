@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dots');
+    return view('welcome');
 });
+
+Route::resource('dots','DotController');
+
+Route::get('nearby/{id}', 'DotController@nearby')->name('nearby');
