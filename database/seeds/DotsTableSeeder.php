@@ -12,6 +12,6 @@ class DotsTableSeeder extends Seeder
      */
     public function run()
     {
-      factory(Dot::class, 15)->create();
+      factory(Dot::class, 20)->create();
     }
 }

@@ -19,7 +19,7 @@ use Illuminate\Support\Str;
 
 $factory->define(Dot::class, function (Faker $faker) {
     return [
-        'axis_x' => $faker->numberBetween(50, 1200),
-        'axis_y' => $faker->numberBetween(20, 450),
+        'axis_x' => $faker->numberBetween(20, 1200),
+        'axis_y' => $faker->numberBetween(20, 400,),
     ];
 });

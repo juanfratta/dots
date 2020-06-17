@@ -10,7 +10,7 @@
 </div>
 
 <!--Dashboard-->
-<div class="container center d-flex justify-content-center">
+<div class="d-flex justify-content-around">
 
     <div>      
     <h6>Editar dot</h6>

@@ -17,8 +17,7 @@ class CreateDotsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->integer('axis_x');
-            $table->integer('axis_y');
-        
+            $table->integer('axis_y');        
         });
     }
 

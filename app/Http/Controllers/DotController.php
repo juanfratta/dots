@@ -130,9 +130,9 @@ class DotController extends Controller
     public function nearby(Request $request, $id)
 
     {   $dot = Dot::find($id);
-        $dotPosition = (($dot->axis_x + $dot->axis_y) / 2);
-                
-        return dd ($dots);
+        
+        return "Aún trabajando en la función para traer dots cercanos";
+        
     }
 }
 

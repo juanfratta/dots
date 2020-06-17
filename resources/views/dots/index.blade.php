@@ -14,7 +14,7 @@
         @endforeach            
     </svg>        
 </div>
-<h6 class="text-center">Haga click en un dot para editar la posicion, eliminarlo</h6>
+<h6 class="text-center">Haga click en un dot para editar su posicion o eliminarlo.</h6>
 <!--Dashboard-->
 
 <div class="container text-center">
