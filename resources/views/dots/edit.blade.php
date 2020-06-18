@@ -10,18 +10,20 @@
 </div>
 
 <!--Dashboard-->
+<span class=" text-center errors"> 
+<!--Error message-->
+    @foreach($errors->all() as $error)
+    <p>{{$error}}</p>
+    @endforeach
+</span>
 <div class="d-flex justify-content-around">
-
+  
+    
     <div>      
     <h6>Editar dot</h6>
-<!--Error message-->    
-        <ul class="errors">
-            @foreach($errors->all() as $error)
-            <li>{{$error}}</li>
-            @endforeach
-        </ul>
+        
 <!--form edit-->
-        <form action="{{ route('dots.update', $dot->id) }}" method="post">
+        <form action="{{ route('dots.update', $dot->id) }}" method="POST">
         @csrf
         @method('PATCH')
             <div class="form-group edit-form">
@@ -46,8 +48,12 @@
     </div> 
     <div>
         <h6>Dots cercanos</h6>
-        <label for="">Cant. dots:</label><input type="text">
-        <a href="{{ route('nearby', $dot->id)}}" class="btn btn-primary">Buscar dots</a>
+        <form action="{{ route('nearby', $dot->id) }}" method="GET">
+        @csrf
+            <label for="count">Count:</label>
+            <input type="text" name="count" value="">
+            <button type="submit" class="btn btn-primary">Buscar dots</button>
+        </form>
     </div>   
 </div>
     

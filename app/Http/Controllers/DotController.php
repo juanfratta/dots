@@ -43,9 +43,9 @@ class DotController extends Controller
         ];
 
         $messages =[
-            "min"=>"El campo :attribute tiene un minimo de :min",
-            "max"=>"El campo :attribute tiene un maximo de :max",
-            "required"=>"El campo :attribute no puede quedar en blanco",
+            "min"=>"El campo :attribute tiene un mínimo de :min",
+            "max"=>"El campo :attribute tiene un máximo de :max",
+            "required"=>"El campo :attribute no puede estar vacío",
             "numeric"=>"El campo :attribute debe ser numérico",
         ];
 
@@ -129,9 +129,26 @@ class DotController extends Controller
 
     public function nearby(Request $request, $id)
 
-    {   $dot = Dot::find($id);
+    {   $rules =[
+            "count"=>"required|numeric|min:1|max:20",
+        ];
+
+        $messages =[
+            "min"=>"El campo :attribute tiene un minimo de :min",
+            "max"=>"El campo :attribute tiene un maximo de :max",
+            "required"=>"El campo :attribute no puede quedar en blanco",
+            "numeric"=>"El campo :attribute debe ser numérico",
+        ];
+
+        $this->validate($request, $rules, $messages);
+
+        $count = $request->count;
+        $dot = Dot::find($id);
+        $dotPosition = (($dot->axis_x+$dot->axis_y)/2);
+           
+        $dotsCercanos = \DB::select("SELECT * FROM dots ORDER BY ABS(((axis_x + axis_y) /2) - $dotPosition) LIMIT $count");        
         
-        return "Aún trabajando en la función para traer dots cercanos";
+        return view ('dots.nearby', compact('dotsCercanos'));
         
     }
 }
